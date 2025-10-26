@@ -1,0 +1,369 @@
+/* ======== RESET ======== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* ======== NAVBAR ======== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: #d4af37;
+}
+
+.logo span {
+  color: #fff;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: #d4af37;
+}
+
+/* ======== MENU MOBILE ======== */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: #d4af37;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 900;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -250px; /* escondido inicialmente */
+    width: 250px;
+    height: 100%;
+    background: #111;
+    padding-top: 5rem;
+    gap: 2rem;
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+
+  .menu.active {
+    right: 0;
+  }
+
+  .menu a {
+    font-size: 1.2rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* ======== HERO ======== */
+.hero {
+  background: url("https://i0.wp.com/www.smartprix.com/bytes/wp-content/uploads/2023/07/cover-10.jpg?ssl=1&quality=80&w=f")
+    center/cover no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  max-width: 700px;
+  padding: 2rem;
+  border-radius: 12px;
+  z-index: 2;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  color: #d4af37;
+}
+
+.hero p {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+.btn {
+  display: inline-block;
+  background: #d4af37;
+  color: #000;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #fff;
+}
+
+/* ======== SECTIONS ======== */
+section {
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+h2 {
+  color: #d4af37;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+/* ======== SOBRE ======== */
+.sobre .info {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.sobre .info div {
+  background: #111;
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 250px;
+  border: 1px solid #d4af37;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); /* sombra dourada suave */
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.sobre .info div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.6); /* sombra dourada mais intensa no hover */
+}
+
+/* Espaçamento para títulos e textos dentro de cada box */
+.sobre .info div h3 {
+  margin: 0.5rem 0;   /* distância do ícone e do parágrafo */
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.sobre .info div p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #ccc;
+}
+
+/* Espaçamento extra para ícones dentro da div */
+.sobre .info div i {
+  font-size: 2.2rem;
+  color: #d4af37;
+  margin-bottom: 1rem;
+}
+
+
+/* ======== PLATAFORMAS ======== */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+.card {
+  background: #111;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 250px;
+  border: 1px solid #d4af37;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); /* sombra dourada suave */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.6); /* sombra dourada mais intensa no hover */
+}
+
+.card i {
+  font-size: 2.5rem;
+  color: #d4af37;
+  margin-bottom: 1rem;
+}
+
+/* Espaçamentos para títulos, subtítulos e parágrafos dentro do card */
+.card h3 {
+  margin: 0.5rem 0;  /* distância do ícone e do texto seguinte */
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.card p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #ccc;
+}
+
+/* Se houver botão dentro do card */
+.card .btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background: #d4af37;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.card .btn:hover {
+  background: #fff;
+}
+
+
+/* ======== TABELA ======== */
+table {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #d4af37;
+  padding: 0.8rem;
+}
+
+th {
+  background: #111;
+  color: #d4af37;
+}
+
+td {
+  background: #000;
+}
+
+/* ======== CONTATO ======== */
+.social {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.social a {
+  color: #d4af37;
+  font-size: 1.8rem;
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+  text-shadow: 0 0 0px #d4af37;
+}
+
+.social a:hover {
+  color: #fff;
+  transform: translateY(-5px) scale(1.2);
+  text-shadow: 
+    0 0 5px #d4af37,
+    0 0 10px #d4af37,
+    0 0 15px #d4af37,
+    0 0 20px #d4af37;
+}
+
+/* ======== FOOTER ======== */
+footer {
+  background: #111;
+  padding: 1.5rem;
+  text-align: center;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+/* ======== RESPONSIVO ======== */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 1.6rem;
+  }
+
+  .card,
+  .sobre .info div {
+    width: 100%;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+}
